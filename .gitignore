@@ -1,5 +1,43 @@
-tmp/*
-config/database.php
-app/tmp/*
-app/config/database.php
-!empty
+<!-- formulario.html -->
+<html>
+  <head>
+		<title>Formulario de recepcion de pedidos</title>
+	</head>
+	<body>
+		<h1 align="center">Formulario de recepcion de pedidos</h1>
+		<form action="procesar1.php">
+			Nombre de usuario:
+			<input type="text" name="NombreUsuario" size="20" /><br />
+		Listado de libro disponibles:
+		<ul>
+			<li>Libro A - (Precio = 10)- Unidades:
+				<input type="text" name="UnidadesA" size="2" />
+				</li>
+				<li>Libro B - (Precio = 12) - Unidades :
+					<input type="text" name="UnidadesB" size="2" />
+					</li>
+					
+		</ul>
+		<div align="center"><input type="submit" value="enviar" /></div>
+		</form>
+	</body>
+</html>
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+<!-- procesar1.php -->
+<html>
+  <head>
+		<title>Datos Introdcidos</title>
+	</head>
+	<body>
+		<h1 align="center">Datos introducidos</h1>
+		<?php
+		echo "Pedido de :", $_GET['NombreUsuario'],"<br />";
+		echo "Numero de Unidades Libro A = ", $_GET['UnidadesA'], "<br />";
+		echo "Numero de Unidades libro B = ", $_GET['UnidadesB'], "<br />";
+		?>
+	</body>
+</html>
